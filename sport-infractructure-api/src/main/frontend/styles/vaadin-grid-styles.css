@@ -1,0 +1,24 @@
+.dynamic-grid {
+    color: #ffffff;
+    border: none;
+    font-size: 22px;
+}
+
+.vaadin-grid.dynamic-grid::part(header-cell) {
+    font-weight: normal;
+    border-bottom: 1px solid #2c3e50;
+}
+
+.dynamic-grid::part(body-cell) {
+    color: #ffffff;
+    border-bottom: 1px solid #2c3e50;
+}
+
+.dynamic-grid::part(resize-handle) {
+    background-color: #8b9096;
+}
+
+.dynamic-grid::part(footer) {
+    color: #000000;
+    border-top: 1px solid #2c3e50;
+}
