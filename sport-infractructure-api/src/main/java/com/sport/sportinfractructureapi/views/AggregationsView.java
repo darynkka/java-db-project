@@ -77,9 +77,9 @@ public class AggregationsView extends VerticalLayout {
         Accordion queryCompetitions = new Accordion();
         queryCompetitions.addClassName("query-accordion");
 
-        DatePicker startDatePicker1 = new DatePicker("Start Date");
-        DatePicker endDatePicker1 = new DatePicker("End Date");
-        Button fetchButton1 = new Button("Do");
+        DatePicker startDatePicker1 = new DatePicker("Початкова дата");
+        DatePicker endDatePicker1 = new DatePicker("Кінцева дата");
+        Button fetchButton1 = new Button("Виконати");
 
         VerticalLayout accordionContent1 = new VerticalLayout();
         HorizontalLayout inputLayout1 = new HorizontalLayout(startDatePicker1, endDatePicker1, fetchButton1);
@@ -116,10 +116,10 @@ public class AggregationsView extends VerticalLayout {
         Accordion queryCompetitionsOrganizer = new Accordion();
         queryCompetitionsOrganizer.addClassName("query-accordion");
 
-        DatePicker startDatePicker2 = new DatePicker("Start Date");
-        DatePicker endDatePicker2 = new DatePicker("End Date");
-        TextField organizerField = new TextField("Organizer");
-        Button fetchButton2 = new Button("Do");
+        DatePicker startDatePicker2 = new DatePicker("Початкова дата");
+        DatePicker endDatePicker2 = new DatePicker("Кінцева дата");
+        TextField organizerField = new TextField("Організатор");
+        Button fetchButton2 = new Button("Виконати");
 
         VerticalLayout accordionContent2 = new VerticalLayout();
         HorizontalLayout inputLayout2 = new HorizontalLayout(startDatePicker2, endDatePicker2, organizerField, fetchButton2);
@@ -158,8 +158,8 @@ public class AggregationsView extends VerticalLayout {
         Accordion queryFacility = new Accordion();
         queryFacility.addClassName("query-accordion");
 
-        TextField facility = new TextField("Facility Name");
-        Button fetchButton3 = new Button("Do");
+        TextField facility = new TextField("Назва споруди");
+        Button fetchButton3 = new Button("Виконати");
 
         VerticalLayout accordionContent3 = new VerticalLayout();
         HorizontalLayout inputLayout3 = new HorizontalLayout(facility, fetchButton3);
@@ -196,9 +196,9 @@ public class AggregationsView extends VerticalLayout {
         Accordion queryFacilitySportType = new Accordion();
         queryFacilitySportType.addClassName("query-accordion");
 
-        TextField facilityName = new TextField("Facility Name");
-        TextField sportType = new TextField("Sport type");
-        Button fetchButton4 = new Button("Do");
+        TextField facilityName = new TextField("Назва споруди");
+        TextField sportType = new TextField("Вид спорту");
+        Button fetchButton4 = new Button("Виконати");
 
         VerticalLayout accordionContent4 = new VerticalLayout();
         HorizontalLayout inputLayout4 = new HorizontalLayout(facilityName, sportType, fetchButton4);
@@ -237,9 +237,9 @@ public class AggregationsView extends VerticalLayout {
         Accordion querySportClub = new Accordion();
         querySportClub.addClassName("query-accordion");
 
-        DatePicker startDatePicker5 = new DatePicker("Start Date");
-        DatePicker endDatePicker5 = new DatePicker("End Date");
-        Button fetchButton5 = new Button("Do");
+        DatePicker startDatePicker5 = new DatePicker("Початкова дата");
+        DatePicker endDatePicker5 = new DatePicker("Кінцева дата");
+        Button fetchButton5 = new Button("Виконати");
 
         VerticalLayout accordionContent5 = new VerticalLayout();
         HorizontalLayout inputLayout5 = new HorizontalLayout(startDatePicker5, endDatePicker5, fetchButton5);
@@ -279,8 +279,8 @@ public class AggregationsView extends VerticalLayout {
         Accordion querySportFacility = new Accordion();
         querySportFacility.addClassName("query-accordion");
 
-        TextField sportFacilityType = new TextField("Facility type");
-        Button fetchButton6 = new Button("Do");
+        TextField sportFacilityType = new TextField("Тип споруди");
+        Button fetchButton6 = new Button("Виконати");
 
         VerticalLayout accordionContent6 = new VerticalLayout();
         HorizontalLayout inputLayout6 = new HorizontalLayout(sportFacilityType, fetchButton6);
@@ -319,9 +319,9 @@ public class AggregationsView extends VerticalLayout {
         Accordion querySportFacilityAndDate = new Accordion();
         querySportFacilityAndDate.addClassName("query-accordion");
 
-        DatePicker startDate8 = new DatePicker("Start date");
-        DatePicker endDate8 = new DatePicker("End date");
-        Button fetchButton8 = new Button("Do");
+        DatePicker startDate8 = new DatePicker("Початкова дата");
+        DatePicker endDate8 = new DatePicker("Кінцева дата");
+        Button fetchButton8 = new Button("Виконати");
 
         VerticalLayout accordionContent8 = new VerticalLayout();
         HorizontalLayout inputLayout8 = new HorizontalLayout(startDate8, endDate8, fetchButton8);
@@ -360,9 +360,9 @@ public class AggregationsView extends VerticalLayout {
         Accordion queryOrganizerCount = new Accordion();
         queryOrganizerCount.addClassName("query-accordion");
 
-        DatePicker startDate9 = new DatePicker("Start date");
-        DatePicker endDate9 = new DatePicker("End date");
-        Button fetchButton9 = new Button("Do");
+        DatePicker startDate9 = new DatePicker("Початкова дата");
+        DatePicker endDate9 = new DatePicker("Кінцева дата");
+        Button fetchButton9 = new Button("Виконати");
 
         VerticalLayout accordionContent9 = new VerticalLayout();
         HorizontalLayout inputLayout9 = new HorizontalLayout(startDate9, endDate9, fetchButton9);
@@ -402,8 +402,8 @@ public class AggregationsView extends VerticalLayout {
         Accordion queryAwarding = new Accordion();
         queryAwarding.addClassName("query-accordion");
 
-        TextField competitionName = new TextField("Competition name");
-        Button fetchButton10 = new Button("Do");
+        TextField competitionName = new TextField("Назва змагання");
+        Button fetchButton10 = new Button("Виконати");
 
         VerticalLayout accordionContent10 = new VerticalLayout();
         HorizontalLayout inputLayout10 = new HorizontalLayout(competitionName, fetchButton10);
@@ -440,8 +440,8 @@ public class AggregationsView extends VerticalLayout {
         Accordion queryAthlete = new Accordion();
         queryAthlete.addClassName("query-accordion");
 
-        TextField sportName = new TextField("Sport type name");
-        Button fetchButton11 = new Button("Do");
+        TextField sportName = new TextField("Вид спорту");
+        Button fetchButton11 = new Button("Виконати");
 
         VerticalLayout accordionContent11 = new VerticalLayout();
         HorizontalLayout inputLayout11 = new HorizontalLayout(sportName, fetchButton11);
@@ -477,9 +477,9 @@ public class AggregationsView extends VerticalLayout {
         Accordion queryAthleteRank = new Accordion();
         queryAthleteRank.addClassName("query-accordion");
 
-        TextField sportNameInfo = new TextField("Sport type name");
-        TextField rank = new TextField("Athlete rank");
-        Button fetchButton12 = new Button("Do");
+        TextField sportNameInfo = new TextField("Вид спорту");
+        TextField rank = new TextField("Розряд спортсмена");
+        Button fetchButton12 = new Button("Виконати");
 
         VerticalLayout accordionContent12 = new VerticalLayout();
         HorizontalLayout inputLayout12 = new HorizontalLayout(sportNameInfo, rank, fetchButton12);
@@ -519,8 +519,8 @@ public class AggregationsView extends VerticalLayout {
         Accordion queryAthleteMultipleSportType = new Accordion();
         queryAthleteMultipleSportType.addClassName("query-accordion");
 
-        TextField sportTypes = new TextField("Sports(separated by coma)");
-        Button fetchButton13 = new Button("Do");
+        TextField sportTypes = new TextField("Види спорту(розділені комою)");
+        Button fetchButton13 = new Button("Виконати");
 
         VerticalLayout accordionContent13 = new VerticalLayout();
         HorizontalLayout inputLayout13 = new HorizontalLayout(sportTypes, fetchButton13);
@@ -556,9 +556,9 @@ public class AggregationsView extends VerticalLayout {
         Accordion queryAthletesCompetition = new Accordion();
         queryAthletesCompetition.addClassName("query-accordion");
 
-        DatePicker startDate14 = new DatePicker("Start date");
-        DatePicker endDate14 = new DatePicker("End date");
-        Button fetchButton14 = new Button("Do");
+        DatePicker startDate14 = new DatePicker("Початкова дата");
+        DatePicker endDate14 = new DatePicker("Кінцева дата");
+        Button fetchButton14 = new Button("Виконати");
 
         VerticalLayout accordionContent14 = new VerticalLayout();
         HorizontalLayout inputLayout14 = new HorizontalLayout(startDate14, endDate14, fetchButton14);
@@ -598,8 +598,8 @@ public class AggregationsView extends VerticalLayout {
         Accordion queryAthleteCoach = new Accordion();
         queryAthleteCoach.addClassName("query-accordion");
 
-        TextField coachName = new TextField("Coach name");
-        Button fetchButton15 = new Button("Do");
+        TextField coachName = new TextField("Ім'я тренера");
+        Button fetchButton15 = new Button("Виконати");
 
         VerticalLayout accordionContent15 = new VerticalLayout();
         HorizontalLayout inputLayout15 = new HorizontalLayout(coachName, fetchButton15);
@@ -635,9 +635,9 @@ public class AggregationsView extends VerticalLayout {
         Accordion queryAthleteCoachRank = new Accordion();
         queryAthleteCoachRank.addClassName("query-accordion");
 
-        TextField coach = new TextField("Coach name");
-        TextField athleteRank = new TextField("Athlete rank");
-        Button fetchButton16 = new Button("Do");
+        TextField coach = new TextField("Ім'я тренера");
+        TextField athleteRank = new TextField("Розряд спортсмена");
+        Button fetchButton16 = new Button("Виконати");
 
         VerticalLayout accordionContent16 = new VerticalLayout();
         HorizontalLayout inputLayout16 = new HorizontalLayout(coach, athleteRank, fetchButton16);
@@ -676,9 +676,9 @@ public class AggregationsView extends VerticalLayout {
         Accordion queryAthleteCoachSportType = new Accordion();
         queryAthleteCoachSportType.addClassName("query-accordion");
 
-        TextField athleteInfo = new TextField("Athlete name");
-        TextField sportInfo = new TextField("Sport type");
-        Button fetchButton17 = new Button("Do");
+        TextField athleteInfo = new TextField("Ім'я спортсмена");
+        TextField sportInfo = new TextField("Вид спорту");
+        Button fetchButton17 = new Button("Виконати");
 
         VerticalLayout accordionContent17 = new VerticalLayout();
         HorizontalLayout inputLayout17 = new HorizontalLayout(athleteInfo, sportInfo, fetchButton17);

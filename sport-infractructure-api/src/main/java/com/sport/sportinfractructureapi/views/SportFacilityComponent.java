@@ -31,7 +31,7 @@ public class SportFacilityComponent extends VerticalLayout {
 
         MenuBar typeMenu = new MenuBar();
         typeMenu.addClassName("menu-bar");
-        MenuItem typeItem = typeMenu.addItem("Sport facility type");
+        MenuItem typeItem = typeMenu.addItem("Тип споруди");
         typeItem.getSubMenu().addItem("Стадіон", e -> handleOption("Option 1"));
         typeItem.getSubMenu().addItem("Корт", e -> handleOption("Option 2"));
         typeItem.getSubMenu().addItem("Спортзал", e -> handleOption("Option 3"));
@@ -73,8 +73,8 @@ public class SportFacilityComponent extends VerticalLayout {
     }
 
     private void handleStadiumOption() {
-        TextField stadiumCapacity = new TextField("Stadium capacity");
-        Button fetchStadiumButton = new Button("Do");
+        TextField stadiumCapacity = new TextField("Місткість стадіону");
+        Button fetchStadiumButton = new Button("Виконати");
 
         fetchStadiumButton.addClickListener(e -> {
             if (stadiumCapacity.isEmpty()) {
@@ -100,8 +100,8 @@ public class SportFacilityComponent extends VerticalLayout {
     }
 
     private void handleCourtOption() {
-        TextField cortCoating = new TextField("Court coating");
-        Button fetchCourtButton = new Button("Do");
+        TextField cortCoating = new TextField("Покриття корту");
+        Button fetchCourtButton = new Button("Виконати");
 
         fetchCourtButton.addClickListener(e -> {
             if (cortCoating.isEmpty()) {
@@ -123,8 +123,8 @@ public class SportFacilityComponent extends VerticalLayout {
     }
 
     private void handleGymOption() {
-        TextField gymEquipment = new TextField("Gym equipment");
-        Button fetchGymButton = new Button("Do");
+        TextField gymEquipment = new TextField("Обладнання спортзалу");
+        Button fetchGymButton = new Button("Виконати");
 
         fetchGymButton.addClickListener(e -> {
             if(gymEquipment.isEmpty()) {
@@ -146,8 +146,8 @@ public class SportFacilityComponent extends VerticalLayout {
     }
 
     private void handlePlaypenOption() {
-        TextField playpenCCS = new TextField("Playpen CCS");
-        Button fetchPlaypenButton = new Button("Do");
+        TextField playpenCCS = new TextField("Клімат-контрольна система манежу");
+        Button fetchPlaypenButton = new Button("Виконати");
 
         fetchPlaypenButton.addClickListener(e -> {
             if (playpenCCS.isEmpty()) {
