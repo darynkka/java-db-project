@@ -1,5 +1,4 @@
 package com.sport.sportinfractructureapi.repository;
-import com.sport.sportinfractructureapi.model.Athlete;
 import com.sport.sportinfractructureapi.model.CompetitionParticipant;
 import com.sport.sportinfractructureapi.model.CompetitionParticipantId;
 import org.springframework.data.jpa.repository.JpaRepository;

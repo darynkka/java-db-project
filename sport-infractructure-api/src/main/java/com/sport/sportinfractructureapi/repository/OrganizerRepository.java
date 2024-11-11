@@ -1,7 +1,5 @@
 package com.sport.sportinfractructureapi.repository;
-import com.sport.sportinfractructureapi.model.Athlete;
 import com.sport.sportinfractructureapi.model.Organizer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.security.core.parameters.P;
@@ -9,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface OrganizerRepository extends JpaRepository<Organizer, Long> {

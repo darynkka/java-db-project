@@ -3,7 +3,6 @@ package com.sport.sportinfractructureapi.model;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 @AllArgsConstructor
 @NoArgsConstructor

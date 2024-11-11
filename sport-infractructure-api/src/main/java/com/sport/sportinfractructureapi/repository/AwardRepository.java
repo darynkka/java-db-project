@@ -1,8 +1,5 @@
 package com.sport.sportinfractructureapi.repository;
-
-import com.sport.sportinfractructureapi.model.Athlete;
 import com.sport.sportinfractructureapi.model.Award;
-import lombok.ToString;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.security.core.parameters.P;

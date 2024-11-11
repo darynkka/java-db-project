@@ -22,7 +22,6 @@ public class NavbarView {
 
     private final KeyService keyService;
     private Key authenticatedUser;
-    private SessionManager sessionManager;
 
     public NavbarView(KeyService keyService) {
         this.keyService = keyService;
@@ -131,6 +130,7 @@ public class NavbarView {
             TextField usernameField = new TextField("Логін");
             TextField passwordField = new TextField("Пароль");
             ComboBox<String> roleField = new ComboBox<>("Роль");
+            roleField.setAllowCustomValue(false);
 
             if (authenticatedUser.getUserRole().equals("Власник")) {
                 roleField.setItems("Адміністратор", "Оператор", "Гість");
@@ -146,10 +146,10 @@ public class NavbarView {
                 String role = roleField.getValue();
 
                 if (username.isEmpty() || password.isEmpty() || role == null) {
-                    Notification.show("Будь ласка, заповніть всі поля", 3000, Notification.Position.MIDDLE);
+                    Notification.show("Будь ласка, заповніть всі поля", 3000, Notification.Position.TOP_CENTER);
                 } else {
                     if (keyService.userExists(username)) {
-                        Notification.show("Користувач з таким логіном вже існує", 3000, Notification.Position.MIDDLE);
+                        Notification.show("Користувач з таким логіном вже існує", 3000, Notification.Position.TOP_CENTER);
                     } else {
                         Key newKey = new Key();
                         newKey.setUserLogin(username);
@@ -158,10 +158,10 @@ public class NavbarView {
 
                         try {
                             keyService.saveKey(newKey);
-                            Notification.show("Користувача успішно додано", 3000, Notification.Position.MIDDLE);
+                            Notification.show("Користувача успішно додано", 3000, Notification.Position.TOP_CENTER);
                             addUserDialog.close();
                         } catch (Exception ex) {
-                            Notification.show("Помилка при додаванні користувача", 3000, Notification.Position.MIDDLE);
+                            Notification.show("Помилка при додаванні користувача", 3000, Notification.Position.TOP_CENTER);
                             ex.printStackTrace();
                         }
                     }

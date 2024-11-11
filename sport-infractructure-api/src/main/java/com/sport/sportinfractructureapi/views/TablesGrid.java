@@ -102,70 +102,117 @@ public class TablesGrid<T> extends VerticalLayout {
 
     private void search() {
         String name = nameFilter.getValue().trim();
-
-        if (entityClass.equals(Athlete.class)) {
-            List<Athlete> filteredAthletes = athleteService.getAllAthletes().stream()
-                    .filter(athlete -> athlete.getAthleteName().toLowerCase().contains(name.toLowerCase()))
-                    .toList();
-            grid.setItems((List<T>) filteredAthletes);
-        } else if (entityClass.equals(Coach.class)) {
-            List<Coach> filteredCoaches = coachService.getAllCoaches().stream()
-                    .filter(coach -> coach.getCoachName().toLowerCase().contains(name.toLowerCase()))
-                    .toList();
-            grid.setItems((List<T>) filteredCoaches);
-        } else if (entityClass.equals(Award.class)) {
-            List<Award> filteredAwards = awardService.getAllAwards().stream()
-                    .filter(award -> {
-                        boolean matchesAthlete = award.getAthlete() != null &&
-                                award.getAthlete().getAthleteName().toLowerCase().contains(name.toLowerCase());
-                        boolean matchesAwardType = award.getAwardType().toLowerCase().contains(name.toLowerCase());
-                        return matchesAthlete || matchesAwardType;
-                    })
-                    .toList();
-            grid.setItems((List<T>) filteredAwards);
-        } else if (entityClass.equals(Organizer.class)) {
-            List<Organizer> filteredOrganizers = organizerService.getAllOrganizers().stream()
-                    .filter(organizer -> organizer.getOrganizerName().toLowerCase().contains(name.toLowerCase()))
-                    .toList();
-            grid.setItems((List<T>) filteredOrganizers);
-        } else if (entityClass.equals(SportClub.class)) {
-            List<SportClub> filteredSportClubs = sportClubService.getAllSportClubs().stream()
-                    .filter(sportClub -> sportClub.getSportClubName().toLowerCase().contains(name.toLowerCase()))
-                    .toList();
-            grid.setItems((List<T>) filteredSportClubs);
-        } else if (entityClass.equals(SportType.class)) {
-            List<SportType> filteredSportTypes = sportTypeService.getAllSportTypes().stream()
-                    .filter(sportType -> sportType.getSportName().toLowerCase().contains(name.toLowerCase()))
-                    .toList();
-            grid.setItems((List<T>) filteredSportTypes);
-        } else if (entityClass.equals(Competition.class)) {
-            List<Competition> filteredCompetitions = competitionService.getAllCompetitions().stream()
-                    .filter(competition -> competition.getCompetitionName().toLowerCase().contains(name.toLowerCase()))
-                    .toList();
-            grid.setItems((List<T>) filteredCompetitions);
-        }  else if (entityClass.equals(CompetitionParticipant.class)) {
-            List<CompetitionParticipant> filteredCompetitionParticipants = competitionParticipantService.getAllCompetitionParticipants().stream()
-                    .filter(competitionParticipant -> competitionParticipant.getAthlete().getAthleteName().toLowerCase().contains(name.toLowerCase()))
-                    .toList();
-            grid.setItems((List<T>) filteredCompetitionParticipants);
-        }  else if (entityClass.equals(SportFacility.class)) {
-            List<SportFacility> filteredSportFacilities = sportFacilityService.getAllSportFacilities().stream()
-                    .filter(sportFacility -> sportFacility.getFacilityName().toLowerCase().contains(name.toLowerCase()))
-                    .toList();
-            grid.setItems((List<T>) filteredSportFacilities);
-        }  else if (entityClass.equals(AthleteCoach.class)) {
-            List<AthleteCoach> filteredAthleteCoaches = athleteCoachService.getAllAthletesCoaches().stream()
-                    .filter(athleteCoach -> athleteCoach.getCoach().getCoachName().toLowerCase().contains(name.toLowerCase()))
-                    .toList();
-            grid.setItems((List<T>) filteredAthleteCoaches);
-        }  else if (entityClass.equals(AthleteSportType.class)) {
-            List<AthleteSportType> filteredAthleteSportType = athleteSportTypeService.getAllAthletesSportTypes().stream()
-                    .filter(athleteSportType -> athleteSportType.getAthlete().getAthleteName().toLowerCase().contains(name.toLowerCase()))
-                    .toList();
-            grid.setItems((List<T>) filteredAthleteSportType);
+        if (name.isEmpty()) {
+            Notification.show("Введіть ім'я/назву для пошуку", 3000, Notification.Position.TOP_CENTER);
+        } else {
+            if (entityClass.equals(Athlete.class)) {
+                List<Athlete> filteredAthletes = athleteService.getAllAthletes().stream()
+                        .filter(athlete -> athlete.getAthleteName().toLowerCase().contains(name.toLowerCase()))
+                        .toList();
+                if (filteredAthletes.isEmpty()) {
+                    Notification.show("Результатів не знайдено", 3000, Notification.Position.TOP_CENTER);
+                    nameFilter.clear();
+                }
+                grid.setItems((List<T>) filteredAthletes);
+            } else if (entityClass.equals(Coach.class)) {
+                List<Coach> filteredCoaches = coachService.getAllCoaches().stream()
+                        .filter(coach -> coach.getCoachName().toLowerCase().contains(name.toLowerCase()))
+                        .toList();
+                if (filteredCoaches.isEmpty()) {
+                    Notification.show("Результатів не знайдено", 3000, Notification.Position.TOP_CENTER);
+                    nameFilter.clear();
+                }
+                grid.setItems((List<T>) filteredCoaches);
+            } else if (entityClass.equals(Award.class)) {
+                List<Award> filteredAwards = awardService.getAllAwards().stream()
+                        .filter(award -> {
+                            boolean matchesAthlete = award.getAthlete() != null &&
+                                    award.getAthlete().getAthleteName().toLowerCase().contains(name.toLowerCase());
+                            boolean matchesAwardType = award.getAwardType().toLowerCase().contains(name.toLowerCase());
+                            return matchesAthlete || matchesAwardType;
+                        })
+                        .toList();
+                if (filteredAwards.isEmpty()) {
+                    Notification.show("Результатів не знайдено", 3000, Notification.Position.TOP_CENTER);
+                    nameFilter.clear();
+                }
+                grid.setItems((List<T>) filteredAwards);
+            } else if (entityClass.equals(Organizer.class)) {
+                List<Organizer> filteredOrganizers = organizerService.getAllOrganizers().stream()
+                        .filter(organizer -> organizer.getOrganizerName().toLowerCase().contains(name.toLowerCase()))
+                        .toList();
+                if (filteredOrganizers.isEmpty()) {
+                    Notification.show("Результатів не знайдено", 3000, Notification.Position.TOP_CENTER);
+                    nameFilter.clear();
+                }
+                grid.setItems((List<T>) filteredOrganizers);
+            } else if (entityClass.equals(SportClub.class)) {
+                List<SportClub> filteredSportClubs = sportClubService.getAllSportClubs().stream()
+                        .filter(sportClub -> sportClub.getSportClubName().toLowerCase().contains(name.toLowerCase()))
+                        .toList();
+                if (filteredSportClubs.isEmpty()) {
+                    Notification.show("Результатів не знайдено", 3000, Notification.Position.TOP_CENTER);
+                    nameFilter.clear();
+                }
+                grid.setItems((List<T>) filteredSportClubs);
+            } else if (entityClass.equals(SportType.class)) {
+                List<SportType> filteredSportTypes = sportTypeService.getAllSportTypes().stream()
+                        .filter(sportType -> sportType.getSportName().toLowerCase().contains(name.toLowerCase()))
+                        .toList();
+                if (filteredSportTypes.isEmpty()) {
+                    Notification.show("Результатів не знайдено", 3000, Notification.Position.TOP_CENTER);
+                    nameFilter.clear();
+                }
+                grid.setItems((List<T>) filteredSportTypes);
+            } else if (entityClass.equals(Competition.class)) {
+                List<Competition> filteredCompetitions = competitionService.getAllCompetitions().stream()
+                        .filter(competition -> competition.getCompetitionName().toLowerCase().contains(name.toLowerCase()))
+                        .toList();
+                if (filteredCompetitions.isEmpty()) {
+                    Notification.show("Результатів не знайдено", 3000, Notification.Position.TOP_CENTER);
+                    nameFilter.clear();
+                }
+                grid.setItems((List<T>) filteredCompetitions);
+            } else if (entityClass.equals(CompetitionParticipant.class)) {
+                List<CompetitionParticipant> filteredCompetitionParticipants = competitionParticipantService.getAllCompetitionParticipants().stream()
+                        .filter(competitionParticipant -> competitionParticipant.getAthlete().getAthleteName().toLowerCase().contains(name.toLowerCase()))
+                        .toList();
+                if (filteredCompetitionParticipants.isEmpty()) {
+                    Notification.show("Результатів не знайдено", 3000, Notification.Position.TOP_CENTER);
+                    nameFilter.clear();
+                }
+                grid.setItems((List<T>) filteredCompetitionParticipants);
+            } else if (entityClass.equals(SportFacility.class)) {
+                List<SportFacility> filteredSportFacilities = sportFacilityService.getAllSportFacilities().stream()
+                        .filter(sportFacility -> sportFacility.getFacilityName().toLowerCase().contains(name.toLowerCase()))
+                        .toList();
+                if (filteredSportFacilities.isEmpty()) {
+                    Notification.show("Результатів не знайдено", 3000, Notification.Position.TOP_CENTER);
+                    nameFilter.clear();
+                }
+                grid.setItems((List<T>) filteredSportFacilities);
+            } else if (entityClass.equals(AthleteCoach.class)) {
+                List<AthleteCoach> filteredAthleteCoaches = athleteCoachService.getAllAthletesCoaches().stream()
+                        .filter(athleteCoach -> athleteCoach.getCoach().getCoachName().toLowerCase().contains(name.toLowerCase()))
+                        .toList();
+                if (filteredAthleteCoaches.isEmpty()) {
+                    Notification.show("Результатів не знайдено", 3000, Notification.Position.TOP_CENTER);
+                    nameFilter.clear();
+                }
+                grid.setItems((List<T>) filteredAthleteCoaches);
+            } else if (entityClass.equals(AthleteSportType.class)) {
+                List<AthleteSportType> filteredAthleteSportType = athleteSportTypeService.getAllAthletesSportTypes().stream()
+                        .filter(athleteSportType -> athleteSportType.getAthlete().getAthleteName().toLowerCase().contains(name.toLowerCase()))
+                        .toList();
+                if (filteredAthleteSportType.isEmpty()) {
+                    Notification.show("Результатів не знайдено", 3000, Notification.Position.TOP_CENTER);
+                    nameFilter.clear();
+                }
+                grid.setItems((List<T>) filteredAthleteSportType);
+            }
         }
-
     }
+
 
     private void addAddButton() {
         Button addButton = new Button("Додати");

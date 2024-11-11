@@ -1,10 +1,6 @@
 package com.sport.sportinfractructureapi.service;
-
-import com.sport.sportinfractructureapi.model.AthleteCoach;
-import com.sport.sportinfractructureapi.model.AthleteCoachId;
 import com.sport.sportinfractructureapi.model.AthleteSportType;
 import com.sport.sportinfractructureapi.model.AthleteSportTypeId;
-import com.sport.sportinfractructureapi.repository.AthleteCoachRepository;
 import com.sport.sportinfractructureapi.repository.AthleteSportTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
